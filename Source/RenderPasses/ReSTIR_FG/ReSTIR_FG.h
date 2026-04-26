@@ -272,6 +272,7 @@ private:
 
     bool mUseStochasticCollect = true;                     //Stochastic collect using reservoir sampling.
     uint mStochasticCollectNumPhotons = 3;
+    bool mUseEnvPhotons = false;                           //Enable environment map photons in photon generation
 
     bool mUsePhotonCulling = true;
     bool mUseCausticCulling = false;                                 //Enable Culling for caustics

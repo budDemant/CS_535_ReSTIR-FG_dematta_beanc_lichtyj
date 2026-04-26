@@ -93,6 +93,7 @@ namespace
     const std::string kPropsEnableDynamicDispatch = "EnableDynamicDispatch";
     const std::string kPropsNumDispatchedPhotons = "NumDispatchedPhotons";
     const std::string kPropsUseLambertianDiffuseBRDF = "UseLambertianDiffuseBRDF";
+    const std::string kPropsUseEnvPhotons = "UseEnvPhotons";
 
     //UI Dropdowns
     const Gui::DropdownList kResamplingModeList{
@@ -203,6 +204,8 @@ void ReSTIR_FG::parseProperties(const Properties& props)
             mNumDispatchedPhotons = value;
         else if (key == kPropsUseLambertianDiffuseBRDF)
             mUseLambertianDiffuse = value;
+        else if (key == kPropsUseEnvPhotons)
+            mUseEnvPhotons = value;
         else
             logWarning("Unknown property '{}' in ReSTIR_FG properties.", key);
 
@@ -231,6 +234,7 @@ Properties ReSTIR_FG::getProperties() const
     props[kPropsEnableDynamicDispatch] = mUseDynamicPhotonDispatchCount;
     props[kPropsNumDispatchedPhotons] = mNumDispatchedPhotons;
     props[kPropsUseLambertianDiffuseBRDF] = mUseLambertianDiffuse;
+    props[kPropsUseEnvPhotons] = mUseEnvPhotons;
 
     return props;
 }
@@ -461,6 +465,8 @@ void ReSTIR_FG::renderUI(Gui::Widgets& widget)
 
                 changed |= groupGen.var("Light Store Probability", mPhotonRejection, 0.f, 1.f, 0.0001f);
                 group.tooltip("Probability a photon light is stored on diffuse hit. Flux is scaled up appropriately");
+                changed |= groupGen.checkbox("Use Env Photons", mUseEnvPhotons);
+                groupGen.tooltip("Enables environment map photons for the photon generation pass.");
 
                 changed |= groupGen.var("Max Bounces", mPhotonMaxBounces, 0u, 32u);
                 changed |= groupGen.var("Max Caustic Bounces", mMaxCausticBounces, 0u, 32u);
@@ -1408,6 +1414,7 @@ void ReSTIR_FG::generatePhotonsPass(RenderContext* pRenderContext, const RenderD
     mGeneratePhotonPass.pProgram->addDefine("MAT_REQUIRE_DIFFUSE_PART", mTraceRequireDiffuseMat ? "1" : "0");
     mGeneratePhotonPass.pProgram->addDefine("MAT_DIFFUSEPART_CUTOFF", std::to_string(mTraceDiffuseCutoff));
     mGeneratePhotonPass.pProgram->addDefine("USE_REDUCED_PD_FORMAT", mUseReducePhotonData ? "1" : "0");
+    mGeneratePhotonPass.pProgram->addDefine("USE_ENV_PHOTONS", mUseEnvPhotons ? "1" : "0");
     mGeneratePhotonPass.pProgram->addDefines(getMaterialDefines());
     
     if (!mGeneratePhotonPass.pVars)
