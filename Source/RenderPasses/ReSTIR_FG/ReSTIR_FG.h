@@ -32,6 +32,7 @@
 #include "Rendering/Lights/LightBVHSampler.h"
 #include "Rendering/Lights/EmissivePowerSampler.h"
 #include "Rendering/Lights/EmissiveUniformSampler.h"
+#include "Rendering/Lights/EnvMapSampler.h"
 
 #include "Rendering/RTXDI/RTXDI.h"
 
@@ -189,6 +190,7 @@ private:
     RTXDI::Options mRTXDIOptions;                                      //Options for RTXDI
 
     std::unique_ptr<EmissiveLightSampler> mpEmissiveLightSampler;       //Light Sampler
+    std::unique_ptr<EnvMapSampler> mpEnvMapSampler;                     //Environment light sampler
     std::unique_ptr<CustomAccelerationStructure> mpPhotonAS;            //Accel Pointer
 
     //

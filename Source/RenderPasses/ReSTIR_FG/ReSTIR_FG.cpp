@@ -725,6 +725,7 @@ void ReSTIR_FG::setScene(RenderContext* pRenderContext, const ref<Scene>& pScene
     mpResamplingPass.reset();
     mpCausticResamplingPass.reset();
     mpEmissiveLightSampler.reset();
+    mpEnvMapSampler.reset();
     mpGIEmissiveLightSampler.reset();
     mpRTXDI.reset();
     mClearReservoir = true;
@@ -768,6 +769,31 @@ void ReSTIR_FG::setScene(RenderContext* pRenderContext, const ref<Scene>& pScene
 bool ReSTIR_FG::prepareLighting(RenderContext* pRenderContext)
 {
     bool lightingChanged = false;
+
+    // Recreate environment map resources when the scene env map changed.
+    if (is_set(mpScene->getUpdates(), Scene::UpdateFlags::EnvMapChanged))
+    {
+        mpEnvMapSampler = nullptr;
+        mGeneratePhotonPass.pVars.reset();
+        lightingChanged = true;
+    }
+
+    if (mpScene->useEnvLight())
+    {
+        if (!mpEnvMapSampler)
+        {
+            mpEnvMapSampler = std::make_unique<EnvMapSampler>(mpDevice, mpScene->getEnvMap());
+            mGeneratePhotonPass.pVars.reset();
+            lightingChanged = true;
+        }
+    }
+    else if (mpEnvMapSampler)
+    {
+        mpEnvMapSampler = nullptr;
+        mGeneratePhotonPass.pVars.reset();
+        lightingChanged = true;
+    }
+
     // Make sure that the emissive light is up to date
     auto& pLights = mpScene->getLightCollection(pRenderContext);
 
@@ -1415,6 +1441,7 @@ void ReSTIR_FG::generatePhotonsPass(RenderContext* pRenderContext, const RenderD
     mGeneratePhotonPass.pProgram->addDefine("MAT_DIFFUSEPART_CUTOFF", std::to_string(mTraceDiffuseCutoff));
     mGeneratePhotonPass.pProgram->addDefine("USE_REDUCED_PD_FORMAT", mUseReducePhotonData ? "1" : "0");
     mGeneratePhotonPass.pProgram->addDefine("USE_ENV_PHOTONS", mUseEnvPhotons ? "1" : "0");
+    mGeneratePhotonPass.pProgram->addDefine("USE_ENV_LIGHT", mpEnvMapSampler ? "1" : "0");
     mGeneratePhotonPass.pProgram->addDefines(getMaterialDefines());
     
     if (!mGeneratePhotonPass.pVars)
@@ -1422,6 +1449,8 @@ void ReSTIR_FG::generatePhotonsPass(RenderContext* pRenderContext, const RenderD
         FALCOR_ASSERT(mGeneratePhotonPass.pProgram);
         if (mpEmissiveLightSampler)
             mGeneratePhotonPass.pProgram->addDefines(mpEmissiveLightSampler->getDefines());
+        if (mpEnvMapSampler)
+            mGeneratePhotonPass.pProgram->addDefines(mpEnvMapSampler->getDefines());
 
         mGeneratePhotonPass.initProgramVars(mpDevice, mpScene, mpSampleGenerator);
     };
