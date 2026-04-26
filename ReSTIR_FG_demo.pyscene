@@ -88,14 +88,14 @@ sceneBuilder.addCamera(camera)
 # Add lights
 lightbarLight = RectLight('LightbarLight')
 lightbarLight.intensity = float3(2000, 2000, 2000)
-lightbarLight.scale=float3(7.5, 0.1, 1.0),
 sceneBuilder.addLight(lightbarLight)
 
 lightbarLightAnimation = sceneBuilder.createAnimation(lightbarLight, 'LightbarLightAnimation', 1.0)
 lightbarLightAnimation.addKeyframe(
     0.0,
     Transform(
-        translation=float3(0, 1.4, -1.8),
+        scaling=float3(7.5, 0.1, 1.0),
+        translation=float3(0, 1.4, -2),
         rotationEulerDeg=float3(90, 0, 0),
     ),
 )
