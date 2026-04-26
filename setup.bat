@@ -19,12 +19,12 @@ if errorlevel 1 (
 
 echo Fetching dependencies ...
 
-call %PACKMAN% pull --platform %PLATFORM% %~dp0\dependencies.xml
+call "%PACKMAN%" pull --platform %PLATFORM% "%~dp0\dependencies.xml"
 if errorlevel 1 goto error
 
-if not exist %~dp0\.vscode\ (
+if not exist "%~dp0\.vscode\" (
     echo Setting up VS Code workspace ...
-    xcopy %~dp0\.vscode-default\ %~dp0\.vscode\ /y
+    xcopy "%~dp0\.vscode-default\" "%~dp0\.vscode\" /y
 )
 
 exit /b 0
