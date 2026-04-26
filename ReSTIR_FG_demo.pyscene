@@ -86,14 +86,16 @@ camera.focalLength = 35
 sceneBuilder.addCamera(camera)
 
 # Add lights
-light0 = DistantLight('Light0')
-light0.direction = float3(1, -1, -1)
-light0.intensity = float3(5, 5, 1)
-light0.angle = 0.1
-sceneBuilder.addLight(light0)
+lightbarLight = RectLight('LightbarLight')
+lightbarLight.intensity = float3(2000, 2000, 2000)
+lightbarLight.scale=float3(7.5, 0.1, 1.0),
+sceneBuilder.addLight(lightbarLight)
 
-light1 = DistantLight('Light1')
-light1.direction = float3(-1, -1, -1)
-light1.intensity = float3(1, 5, 5)
-light1.angle = 0.1
-sceneBuilder.addLight(light1)
+lightbarLightAnimation = sceneBuilder.createAnimation(lightbarLight, 'LightbarLightAnimation', 1.0)
+lightbarLightAnimation.addKeyframe(
+    0.0,
+    Transform(
+        translation=float3(0, 1.4, -1.8),
+        rotationEulerDeg=float3(90, 0, 0),
+    ),
+)
