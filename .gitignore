@@ -34,3 +34,5 @@
 *.mp4
 *.tlog
 *.bak
+
+/external/

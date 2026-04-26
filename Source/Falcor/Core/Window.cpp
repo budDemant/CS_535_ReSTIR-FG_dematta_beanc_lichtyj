@@ -51,7 +51,13 @@ public:
         Window* pWindow = (Window*)glfwGetWindowUserPointer(pGlfwWindow);
         if (pWindow != nullptr)
         {
-            pWindow->resize(width, height); // Window callback is handled in here
+            // Do NOT call Window::resize() here: that routes through
+            // glfwSetWindowSize() -> XResizeWindow() on X11/Xwayland and can
+            // trigger a feedback loop with the compositor (rubber-banding
+            // resizes, eventual swapchain crash). Update stored size and
+            // notify callbacks directly instead.
+            pWindow->setWindowSize((uint32_t)width, (uint32_t)height);
+            pWindow->mpCallbacks->handleWindowSizeChange();
         }
     }
 
@@ -426,9 +432,21 @@ Window::Window(const Desc& desc, ICallbacks* pCallbacks)
     mApiHandle = glfwGetWin32Window(mpGLFWWindow);
     FALCOR_ASSERT(mApiHandle);
 #elif FALCOR_LINUX
+#if FALCOR_USE_WAYLAND
+    mApiHandle.backend = WindowHandle::Backend::Wayland;
+    mApiHandle.pDisplay = glfwGetWaylandDisplay();
+    mApiHandle.pSurface = glfwGetWaylandWindow(mpGLFWWindow);
+    FALCOR_ASSERT(mApiHandle.pDisplay != nullptr);
+    FALCOR_ASSERT(mApiHandle.pSurface != nullptr);
+    logInfo("WSI backend: Wayland");
+#else
+    mApiHandle.backend = WindowHandle::Backend::X11;
     mApiHandle.pDisplay = glfwGetX11Display();
     mApiHandle.window = glfwGetX11Window(mpGLFWWindow);
     FALCOR_ASSERT(mApiHandle.pDisplay != nullptr);
+    FALCOR_ASSERT(mApiHandle.window != 0);
+    logInfo("WSI backend: X11");
+#endif
 #endif
     updateWindowSize();
 

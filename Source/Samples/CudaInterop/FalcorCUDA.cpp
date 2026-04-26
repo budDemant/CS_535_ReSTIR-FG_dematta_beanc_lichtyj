@@ -92,7 +92,8 @@ bool initCUDA()
     gNodeMask = prop.luidDeviceNodeMask;
     CUDA_CHECK_SUCCESS(cudaSetDevice(firstGPUID));
     CU_CHECK_SUCCESS(cuDeviceGet(&gCudaDevice, firstGPUID));
-    CU_CHECK_SUCCESS(cuCtxCreate(&gCudaContext, 0, gCudaDevice));
+    // CUDA 13+ passes CUctxCreateParams* (nullptr for default context creation).
+    CU_CHECK_SUCCESS(cuCtxCreate(&gCudaContext, nullptr, 0, gCudaDevice));
     CU_CHECK_SUCCESS(cuStreamCreate(&gCudaStream, CU_STREAM_DEFAULT));
     return true;
 }

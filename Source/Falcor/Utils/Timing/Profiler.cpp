@@ -33,6 +33,13 @@
 
 #include <fstream>
 
+// NVTX ranges make Falcor's profiler scopes visible in Nsight Systems / Nsight Graphics
+// without depending on the in-engine GpuTimer resolve path (which is broken on Vulkan).
+// NVTX v3 is header-only and is provided by the CUDA toolkit; compile out when CUDA is absent.
+#if FALCOR_HAS_CUDA
+#include <nvtx3/nvToolsExt.h>
+#endif
+
 namespace Falcor
 {
 namespace
@@ -337,6 +344,11 @@ void Profiler::startEvent(RenderContext* pRenderContext, const std::string& name
     {
         FALCOR_ASSERT(pRenderContext);
         pRenderContext->getLowLevelData()->beginDebugEvent(name.c_str());
+#if FALCOR_HAS_CUDA
+        // Emit an NVTX range so nsys/Nsight Graphics show a labelled span per profiler scope.
+        // Paired with nvtxRangePop() in endEvent; stack-ordered, matches ScopedProfilerEvent RAII.
+        nvtxRangePushA(name.c_str());
+#endif
     }
 }
 
@@ -360,6 +372,9 @@ void Profiler::endEvent(RenderContext* pRenderContext, const std::string& name, 
     {
         FALCOR_ASSERT(pRenderContext)
         pRenderContext->getLowLevelData()->endDebugEvent();
+#if FALCOR_HAS_CUDA
+        nvtxRangePop();
+#endif
     }
 }
 

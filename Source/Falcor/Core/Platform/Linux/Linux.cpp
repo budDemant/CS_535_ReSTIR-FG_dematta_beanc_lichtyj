@@ -40,7 +40,7 @@
 #include <sys/stat.h>
 #include <pwd.h>
 #ifndef _GNU_SOURCE
-#define _GNU_SOURCE // needed for dladdr()
+#define _GNU_SOURCE // GNU libc extensions (e.g. dlfcn)
 #endif
 #include <dlfcn.h>
 
@@ -219,12 +219,10 @@ const std::filesystem::path& getRuntimeDirectory()
     static std::filesystem::path path(
         []()
         {
-            Dl_info info;
-            if (dladdr((void*)&getRuntimeDirectory, &info) == 0)
-            {
-                throw RuntimeError("Failed to get the falcor directory. dladdr() failed.");
-            }
-            return std::filesystem::path(info.dli_fname).parent_path();
+            // Resolves next to the running executable (where deploy copies data/, scripts/, plugins/).
+            // dladdr on libFalcor.so can point at a different directory than the app when LD_LIBRARY_PATH
+            // or a non-standard loader path is used, which breaks asset lookup.
+            return getExecutablePath().parent_path();
         }()
     );
     return path;

@@ -35,6 +35,9 @@ message(STATUS "Configure glfw")
 set(GLFW_BUILD_EXAMPLES OFF)
 set(GLFW_BUILD_TESTS OFF)
 set(GLFW_BUILD_DOCS OFF)
+if(FALCOR_LINUX)
+    set(GLFW_USE_WAYLAND ${FALCOR_USE_WAYLAND} CACHE BOOL "Use Wayland for window creation" FORCE)
+endif()
 add_subdirectory(glfw)
 
 # imgui
@@ -331,7 +334,12 @@ else()
 endif()
 
 # slang
-set(SLANG_DIR ${PACKMAN_DIR}/slang)
+if(FALCOR_USE_WAYLAND)
+    set(SLANG_DIR ${CMAKE_SOURCE_DIR}/external/slang-src)
+else()
+    set(SLANG_DIR ${PACKMAN_DIR}/slang)
+endif()
+set(FALCOR_DEPLOY_SLANG_DIR ${SLANG_DIR} PARENT_SCOPE)
 set(FALCOR_SLANG_CONFIG release CACHE STRING "Slang config to use.")
 set_property(CACHE FALCOR_SLANG_CONFIG PROPERTY STRINGS release debug)
 if(FALCOR_WINDOWS)

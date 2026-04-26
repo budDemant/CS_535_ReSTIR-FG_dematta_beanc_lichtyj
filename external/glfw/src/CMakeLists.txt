@@ -40,30 +40,43 @@ elseif (_GLFW_WAYLAND)
                      posix_time.c posix_thread.c xkb_unicode.c
                      egl_context.c osmesa_context.c)
 
-    ecm_add_wayland_client_protocol(glfw_SOURCES
-        PROTOCOL
+    function(glfw_add_wayland_client_protocol target_sources protocol basename)
+        set(protocol_header "${GLFW_BINARY_DIR}/src/wayland-${basename}-client-protocol.h")
+        set(protocol_code "${GLFW_BINARY_DIR}/src/wayland-${basename}-protocol.c")
+
+        add_custom_command(
+            OUTPUT "${protocol_header}"
+            COMMAND "${WAYLAND_SCANNER_EXECUTABLE}" client-header "${protocol}" "${protocol_header}"
+            DEPENDS "${protocol}"
+            VERBATIM)
+
+        add_custom_command(
+            OUTPUT "${protocol_code}"
+            COMMAND "${WAYLAND_SCANNER_EXECUTABLE}" private-code "${protocol}" "${protocol_code}"
+            DEPENDS "${protocol}"
+            VERBATIM)
+
+        set(${target_sources} ${${target_sources}} "${protocol_header}" "${protocol_code}" PARENT_SCOPE)
+    endfunction()
+
+    glfw_add_wayland_client_protocol(glfw_SOURCES
         "${WAYLAND_PROTOCOLS_PKGDATADIR}/stable/xdg-shell/xdg-shell.xml"
-        BASENAME xdg-shell)
-    ecm_add_wayland_client_protocol(glfw_SOURCES
-        PROTOCOL
+        xdg-shell)
+    glfw_add_wayland_client_protocol(glfw_SOURCES
         "${WAYLAND_PROTOCOLS_PKGDATADIR}/unstable/xdg-decoration/xdg-decoration-unstable-v1.xml"
-        BASENAME xdg-decoration)
-    ecm_add_wayland_client_protocol(glfw_SOURCES
-        PROTOCOL
+        xdg-decoration)
+    glfw_add_wayland_client_protocol(glfw_SOURCES
         "${WAYLAND_PROTOCOLS_PKGDATADIR}/stable/viewporter/viewporter.xml"
-        BASENAME viewporter)
-    ecm_add_wayland_client_protocol(glfw_SOURCES
-        PROTOCOL
+        viewporter)
+    glfw_add_wayland_client_protocol(glfw_SOURCES
         "${WAYLAND_PROTOCOLS_PKGDATADIR}/unstable/relative-pointer/relative-pointer-unstable-v1.xml"
-        BASENAME relative-pointer-unstable-v1)
-    ecm_add_wayland_client_protocol(glfw_SOURCES
-        PROTOCOL
+        relative-pointer-unstable-v1)
+    glfw_add_wayland_client_protocol(glfw_SOURCES
         "${WAYLAND_PROTOCOLS_PKGDATADIR}/unstable/pointer-constraints/pointer-constraints-unstable-v1.xml"
-        BASENAME pointer-constraints-unstable-v1)
-    ecm_add_wayland_client_protocol(glfw_SOURCES
-        PROTOCOL
+        pointer-constraints-unstable-v1)
+    glfw_add_wayland_client_protocol(glfw_SOURCES
         "${WAYLAND_PROTOCOLS_PKGDATADIR}/unstable/idle-inhibit/idle-inhibit-unstable-v1.xml"
-        BASENAME idle-inhibit-unstable-v1)
+        idle-inhibit-unstable-v1)
 elseif (_GLFW_OSMESA)
     set(glfw_HEADERS ${common_HEADERS} null_platform.h null_joystick.h
                      posix_time.h posix_thread.h osmesa_context.h)

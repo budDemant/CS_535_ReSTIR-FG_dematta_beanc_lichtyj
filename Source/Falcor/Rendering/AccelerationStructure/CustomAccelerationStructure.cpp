@@ -32,6 +32,7 @@
 #include "Utils/Math/Common.h"
 #include "Utils/Scripting/ScriptBindings.h"
 #include <fstd/bit.h> // TODO C++20: Replace with <bit>
+#include <stdexcept>
 
 namespace Falcor
 {
@@ -51,7 +52,7 @@ namespace Falcor
         mpDevice = pDevice;
         if (!mpDevice->isFeatureSupported(Device::SupportedFeatures::Raytracing))
         {
-            throw std::exception("Raytracing is not supported by the current device");
+            throw std::runtime_error("Raytracing is not supported by the current device");
         }
 
         mBuildMode = buildMode;
@@ -74,7 +75,7 @@ namespace Falcor
         mpDevice = pDevice;
         if (!mpDevice->isFeatureSupported(Device::SupportedFeatures::Raytracing))
         {
-            throw std::exception("Raytracing is not supported by the current device");
+            throw std::runtime_error("Raytracing is not supported by the current device");
         }
 
         mBuildMode = buildMode;

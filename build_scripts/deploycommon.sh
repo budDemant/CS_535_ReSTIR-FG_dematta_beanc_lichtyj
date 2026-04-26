@@ -8,6 +8,10 @@
 
 EXT_DIR=$1/external/packman/
 OUT_DIR=$2
+SLANG_ROOT=$6
+if [ -z "${SLANG_ROOT}" ]; then
+    SLANG_ROOT=${EXT_DIR}/slang
+fi
 
 IS_DEBUG=false
 if [ "$3" = "Debug" ]; then
@@ -27,7 +31,7 @@ mkdir -p ${OUT_DIR}/pythondist
 cp -frp ${EXT_DIR}/python/* ${OUT_DIR}/pythondist
 
 # Copy slang
-cp -f ${EXT_DIR}/slang/bin/linux-x64/${SLANG_DIR}/lib*.so ${OUT_DIR}
+cp -f ${SLANG_ROOT}/bin/linux-x64/${SLANG_DIR}/lib*.so ${OUT_DIR}
 
 # Copy CUDA
 CUDA_DIR=${EXT_DIR}/cuda

@@ -53,6 +53,11 @@ else()
 endif()
 message(STATUS "Platform: ${FALCOR_PLATFORM}")
 
+set(FALCOR_USE_WAYLAND OFF CACHE BOOL "Use native Wayland windowing on Linux")
+if(FALCOR_USE_WAYLAND AND NOT FALCOR_LINUX)
+    message(FATAL_ERROR "FALCOR_USE_WAYLAND is only supported on Linux")
+endif()
+
 # Check if D3D12/Vulkan are available.
 set(FALCOR_HAS_D3D12 ${FALCOR_WINDOWS})
 set(FALCOR_HAS_VULKAN ON)
@@ -350,7 +355,7 @@ if(FALCOR_WINDOWS)
     )
 elseif(FALCOR_LINUX)
     add_custom_target(deploy_dependencies ALL
-        COMMAND ${CMAKE_SOURCE_DIR}/build_scripts/deploycommon.sh ${source_dir} ${output_dir} $<CONFIG> ${FALCOR_SLANG_CONFIG} ${FALCOR_DLSS_DIR}
+        COMMAND ${CMAKE_SOURCE_DIR}/build_scripts/deploycommon.sh ${source_dir} ${output_dir} $<CONFIG> ${FALCOR_SLANG_CONFIG} ${FALCOR_DLSS_DIR} ${FALCOR_DEPLOY_SLANG_DIR}
     )
 endif()
 set_target_properties(deploy_dependencies PROPERTIES FOLDER "Misc")

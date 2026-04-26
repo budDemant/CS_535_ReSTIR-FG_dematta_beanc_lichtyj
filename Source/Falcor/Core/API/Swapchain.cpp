@@ -30,6 +30,36 @@
 #include "GFXAPI.h"
 #include "GFXHelpers.h"
 
+#include <type_traits>
+#include <utility>
+
+namespace
+{
+#if FALCOR_LINUX
+template<typename T, typename = void>
+struct HasFromWaylandWindow : std::false_type
+{};
+
+template<typename T>
+struct HasFromWaylandWindow<T, std::void_t<decltype(T::FromWaylandWindow(std::declval<void*>(), std::declval<void*>()))>>
+    : std::true_type
+{};
+
+template<typename GfxWindowHandle>
+GfxWindowHandle makeWaylandWindowHandle(Falcor::WindowHandle windowHandle)
+{
+    if constexpr (HasFromWaylandWindow<GfxWindowHandle>::value)
+    {
+        return GfxWindowHandle::FromWaylandWindow(windowHandle.pDisplay, windowHandle.pSurface);
+    }
+    else
+    {
+        throw Falcor::RuntimeError("Native Wayland swapchains require a slang-gfx build with Wayland WindowHandle support.");
+    }
+}
+#endif
+} // namespace
+
 namespace Falcor
 {
 
@@ -52,7 +82,18 @@ Swapchain::Swapchain(ref<Device> pDevice, const Desc& desc, WindowHandle windowH
 #if FALCOR_WINDOWS
     gfx::WindowHandle gfxWindowHandle = gfx::WindowHandle::FromHwnd(windowHandle);
 #elif FALCOR_LINUX
-    gfx::WindowHandle gfxWindowHandle = gfx::WindowHandle::FromXWindow(windowHandle.pDisplay, windowHandle.window);
+    gfx::WindowHandle gfxWindowHandle = {};
+    switch (windowHandle.backend)
+    {
+    case WindowHandle::Backend::X11:
+        gfxWindowHandle = gfx::WindowHandle::FromXWindow(windowHandle.pDisplay, windowHandle.window);
+        break;
+    case WindowHandle::Backend::Wayland:
+        gfxWindowHandle = makeWaylandWindowHandle<gfx::WindowHandle>(windowHandle);
+        break;
+    default:
+        throw RuntimeError("Unsupported Linux window backend.");
+    }
 #endif
     FALCOR_GFX_CALL(mpDevice->getGfxDevice()->createSwapchain(gfxDesc, gfxWindowHandle, mGfxSwapchain.writeRef()));
 
@@ -83,6 +124,12 @@ void Swapchain::resize(uint32_t width, uint32_t height)
     mImages.clear();
     mpDevice->flushAndSync();
     FALCOR_GFX_CALL(mGfxSwapchain->resize(width, height));
+    // Update stored dimensions so prepareImages() wraps the new GFX images
+    // with matching width/height. Without this, Texture wrappers retain the
+    // original size from construction and mismatch the backing swapchain
+    // images after any resize.
+    mDesc.width = width;
+    mDesc.height = height;
     prepareImages();
 }
 

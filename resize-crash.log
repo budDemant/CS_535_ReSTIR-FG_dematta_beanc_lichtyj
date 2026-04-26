@@ -1,0 +1,663 @@
+(Info) Falcor (ClausthalRendering) 6.0 (commit: 416e4b5, branch: main, contains uncommitted changes)
+(Info) Created GPU device 'NVIDIA GeForce RTX 4070 Ti' using 'Vulkan' API.
+(Info) Loaded 32 plugin(s) in 0.0189s
+(Info) Importing scene: /home/josh/.cache/packman/chk/falcor_media/7acdf8b0/Kitchen_ReSTIRFG/KitchenReSTIRFG.pyscene
+(Info) Importing scene: Kitchen_ReSTIRFG.gltf
+(Warning) AssimpImporter: Material 'Radio-handle.001' has an unknown material property: '001'.
+(Warning) AssimpImporter: Material 'Radio-plastic.001' has an unknown material property: '001'.
+(Warning) AssimpImporter: Material 'bush-logo.001' has an unknown material property: '001'.
+(Warning) AssimpImporter: Material 'Radio-dial-line.001' has an unknown material property: '001'.
+(Warning) AssimpImporter: Material 'Handle-chrome.001' has an unknown material property: '001'.
+(Warning) AssimpImporter: Material 'Radio-glass.001' has an unknown material property: '001'.
+(Warning) AssimpImporter: Material 'Radio-inside.001' has an unknown material property: '001'.
+(Warning) AssimpImporter: Material 'Radio-knob.001' has an unknown material property: '001'.
+(Warning) AssimpImporter: Material 'Radio-suround.001' has an unknown material property: '001'.
+(Warning) AssimpImporter: Material 'Ceiling-light-fitting.001' has an unknown material property: '001'.
+(Warning) AssimpImporter: Material 'Lamp-cable.001' has an unknown material property: '001'.
+(Warning) AssimpImporter: Material 'Cupboard-units.001' has an unknown material property: '001'.
+(Warning) AssimpImporter: Material 'Cupboard-units.003' has an unknown material property: '003'.
+(Warning) AssimpImporter: Material 'Tiles.001' has an unknown material property: '001'.
+(Warning) AssimpImporter: Material 'Worktops-main.001' has an unknown material property: '001'.
+(Warning) AssimpImporter: Material 'Cupboard-units.004' has an unknown material property: '004'.
+(Warning) AssimpImporter: Material 'Wood-top-suround.001' has an unknown material property: '001'.
+(Warning) AssimpImporter: Material 'Cupboard-units.005' has an unknown material property: '005'.
+(Warning) AssimpImporter: Material 'Cupboard-units.006' has an unknown material property: '006'.
+(Warning) AssimpImporter: Material 'Skirting-Board.001' has an unknown material property: '001'.
+(Warning) AssimpImporter: Material 'Sideboard-Schublade.001' has an unknown material property: '001'.
+(Warning) AssimpImporter: Material 'Sideboard-Boden.001' has an unknown material property: '001'.
+(Warning) AssimpImporter: Material 'Sideboard-Korpus.001' has an unknown material property: '001'.
+(Warning) AssimpImporter: Material 'YellowGlass.001' has an unknown material property: '001'.
+(Warning) AssimpImporter: Material 'Walls.001' has an unknown material property: '001'.
+(Warning) AssimpImporter: Material 'Ceiling.001' has an unknown material property: '001'.
+(Warning) AssimpImporter: Material 'Pillar.002' has an unknown material property: '002'.
+(Warning) AssimpImporter: Material with no name found -> renaming to 'unnamed'.
+(Warning) The mesh 'Cube.022' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.022' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.022' has zero-length normals/tangents at 992 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.010' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.010' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.010' has zero-length normals/tangents at 353 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.011' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.011' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.011' has zero-length normals/tangents at 24 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.019' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.019' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.019' has zero-length normals/tangents at 96 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.014-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.014-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.014-0' has zero-length normals/tangents at 2208 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.014-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.014-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.014-1' has zero-length normals/tangents at 800 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.004' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.004' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.004' has zero-length normals/tangents at 1393 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.001-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.001-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.001-0' has zero-length normals/tangents at 1184 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.001-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.001-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.001-1' has zero-length normals/tangents at 241 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.021' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.021' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.021' has zero-length normals/tangents at 854 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.029' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.029' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.029' has zero-length normals/tangents at 434 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.071' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.071' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.071' has zero-length normals/tangents at 7954 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.032' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.032' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.032' has zero-length normals/tangents at 1226 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.027' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.027' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.027' has zero-length normals/tangents at 3362 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.028' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.028' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.028' has zero-length normals/tangents at 2626 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.077' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.077' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.077' has zero-length normals/tangents at 7138 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.013' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.013' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.013' has zero-length normals/tangents at 2658 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.021' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.021' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.021' has zero-length normals/tangents at 48 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.083' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.083' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.083' has zero-length normals/tangents at 2560 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.028' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.028' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.028' has zero-length normals/tangents at 25980 vertices. Please fix the asset.
+(Warning) The mesh 'CUaplliances_curve' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'CUaplliances_curve' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'CUaplliances_curve' has zero-length normals/tangents at 318 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.050' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.050' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.050' has zero-length normals/tangents at 3234 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.048' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.048' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.048' has zero-length normals/tangents at 640 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.013' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.013' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.013' has zero-length normals/tangents at 1393 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.040' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.040' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.040' has zero-length normals/tangents at 482 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.039' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.039' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.039' has zero-length normals/tangents at 482 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.037' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.037' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.037' has zero-length normals/tangents at 482 vertices. Please fix the asset.
+(Warning) The mesh 'Circle.035-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Circle.035-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Circle.035-0' has zero-length normals/tangents at 2014 vertices. Please fix the asset.
+(Warning) The mesh 'Circle.035-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Circle.035-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Circle.035-1' has zero-length normals/tangents at 20756 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.099' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.099' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.099' has zero-length normals/tangents at 537 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.003' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.003' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.003' has zero-length normals/tangents at 185 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.011' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.011' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.011' has zero-length normals/tangents at 3858 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.005' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.005' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.005' has zero-length normals/tangents at 96 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.004' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.004' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.004' has zero-length normals/tangents at 48 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.013' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.013' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.013' has zero-length normals/tangents at 704 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.012' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.012' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.012' has zero-length normals/tangents at 48 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.051' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.051' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.051' has zero-length normals/tangents at 96 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.033' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.033' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.033' has zero-length normals/tangents at 1056 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.032' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.032' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.032' has zero-length normals/tangents at 5298 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.009' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.009' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.009' has zero-length normals/tangents at 1929 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.041-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.041-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.041-0' has zero-length normals/tangents at 3362 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.041-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.041-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.041-1' has zero-length normals/tangents at 280 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.039-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.039-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.039-0' has zero-length normals/tangents at 241 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.039-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.039-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.039-1' has zero-length normals/tangents at 1184 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.038-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.038-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.038-0' has zero-length normals/tangents at 482 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.038-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.038-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.038-1' has zero-length normals/tangents at 2368 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.073' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.073' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.073' has zero-length normals/tangents at 434 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.015' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.015' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.015' has zero-length normals/tangents at 16 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.018' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.018' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.018' has zero-length normals/tangents at 912 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.016' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.016' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.016' has zero-length normals/tangents at 88 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.004' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.004' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.004' has zero-length normals/tangents at 86 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.005' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.005' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.005' has zero-length normals/tangents at 3858 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.023' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.023' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.023' has zero-length normals/tangents at 96 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.056' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.056' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.056' has zero-length normals/tangents at 36 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.014' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.014' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.014' has zero-length normals/tangents at 200 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.012' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.012' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.012' has zero-length normals/tangents at 200 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.011' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.011' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.011' has zero-length normals/tangents at 200 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.010' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.010' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.010' has zero-length normals/tangents at 200 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.009' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.009' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.009' has zero-length normals/tangents at 200 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.008' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.008' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.008' has zero-length normals/tangents at 200 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.006' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.006' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.006' has zero-length normals/tangents at 200 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.003' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.003' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.003' has zero-length normals/tangents at 606 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.002' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.002' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.002' has zero-length normals/tangents at 228 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.016' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.016' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.016' has zero-length normals/tangents at 706 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.001' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.001' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.001' has zero-length normals/tangents at 706 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.055' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.055' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.055' has zero-length normals/tangents at 768 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.054' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.054' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.054' has zero-length normals/tangents at 576 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.053' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.053' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.053' has zero-length normals/tangents at 576 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.029' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.029' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.029' has zero-length normals/tangents at 896 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.009' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.009' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.009' has zero-length normals/tangents at 1249 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder' has zero-length normals/tangents at 602 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.005-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.005-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.005-0' has zero-length normals/tangents at 964 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.005-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.005-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.005-1' has zero-length normals/tangents at 4736 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.002-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.002-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.002-0' has zero-length normals/tangents at 6724 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.002-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.002-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.002-1' has zero-length normals/tangents at 560 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.018-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.018-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.018-0' has zero-length normals/tangents at 3695 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.018-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.018-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.018-1' has zero-length normals/tangents at 300 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.001' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.001' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.001' has zero-length normals/tangents at 44 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.001' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.001' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.001' has zero-length normals/tangents at 125 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.017' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.017' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.017' has zero-length normals/tangents at 278 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.016' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.016' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.016' has zero-length normals/tangents at 24 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.015' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.015' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.015' has zero-length normals/tangents at 24 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.002' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.002' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.002' has zero-length normals/tangents at 44 vertices. Please fix the asset.
+(Warning) The mesh 'Plane-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane-0' has zero-length normals/tangents at 374 vertices. Please fix the asset.
+(Warning) The mesh 'Plane-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane-1' has zero-length normals/tangents at 77 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.040' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.040' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.040' has zero-length normals/tangents at 48 vertices. Please fix the asset.
+(Warning) The mesh 'Circle.011' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Circle.011' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Circle.011' has zero-length normals/tangents at 252 vertices. Please fix the asset.
+(Warning) The mesh 'Circle.010' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Circle.010' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Circle.010' has zero-length normals/tangents at 12 vertices. Please fix the asset.
+(Warning) The mesh 'Circle.008' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Circle.008' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Circle.008' has zero-length normals/tangents at 936 vertices. Please fix the asset.
+(Warning) The mesh 'Circle.007' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Circle.007' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Circle.007' has zero-length normals/tangents at 2408 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.007' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.007' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.007' has zero-length normals/tangents at 88 vertices. Please fix the asset.
+(Warning) The mesh 'Circle.009' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Circle.009' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Circle.009' has zero-length normals/tangents at 674 vertices. Please fix the asset.
+(Warning) The mesh 'Circle.006' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Circle.006' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Circle.006' has zero-length normals/tangents at 288 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.030' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.030' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.030' has zero-length normals/tangents at 3603 vertices. Please fix the asset.
+(Warning) The mesh 'Circle.002' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Circle.002' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Circle.002' has zero-length normals/tangents at 792 vertices. Please fix the asset.
+(Warning) The mesh 'Circle' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Circle' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Circle' has zero-length normals/tangents at 1312 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.017' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.017' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.017' has zero-length normals/tangents at 27140 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.034' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.034' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.034' has zero-length normals/tangents at 24 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.033' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.033' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.033' has zero-length normals/tangents at 192 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.032' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.032' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.032' has zero-length normals/tangents at 384 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.048' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.048' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.048' has zero-length normals/tangents at 1378 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.054' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.054' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.054' has zero-length normals/tangents at 833 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.031' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.031' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.031' has zero-length normals/tangents at 1521 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.034' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.034' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.034' has zero-length normals/tangents at 10092 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.040-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.040-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.040-0' has zero-length normals/tangents at 2529 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.040-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.040-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.040-1' has zero-length normals/tangents at 3569 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.037-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.037-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.037-0' has zero-length normals/tangents at 2612 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.037-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.037-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.037-1' has zero-length normals/tangents at 4633 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.026-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.026-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.026-0' has zero-length normals/tangents at 1890 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.026-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.026-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.026-1' has zero-length normals/tangents at 4646 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.025-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.025-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.025-0' has zero-length normals/tangents at 20874 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.025-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.025-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.025-1' has zero-length normals/tangents at 1945 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.025-2' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.025-2' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.025-2' has zero-length normals/tangents at 2905 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.022' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.022' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.022' has zero-length normals/tangents at 8917 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.072' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.072' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.072' has zero-length normals/tangents at 9336 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.024' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.024' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.024' has zero-length normals/tangents at 189 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.008' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.008' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.008' has zero-length normals/tangents at 472 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.007' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.007' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.007' has zero-length normals/tangents at 186 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.071' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.071' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.071' has zero-length normals/tangents at 2912 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.069-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.069-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.069-0' has zero-length normals/tangents at 20 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.069-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.069-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.069-1' has zero-length normals/tangents at 598 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.019' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.019' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.019' has zero-length normals/tangents at 50 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.022' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.022' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.022' has zero-length normals/tangents at 61 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.028' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.028' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.028' has zero-length normals/tangents at 549 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.039' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.039' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.039' has zero-length normals/tangents at 24 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.035' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.035' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.035' has zero-length normals/tangents at 27140 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.067' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.067' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.067' has zero-length normals/tangents at 6152 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.016' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.016' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.016' has zero-length normals/tangents at 7620 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.065-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.065-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.065-0' has zero-length normals/tangents at 5090 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.065-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.065-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.065-1' has zero-length normals/tangents at 330 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.059-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.059-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.059-0' has zero-length normals/tangents at 2050 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.059-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.059-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.059-1' has zero-length normals/tangents at 1312 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.059-2' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.059-2' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.059-2' has zero-length normals/tangents at 1122 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.041' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.041' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.041' has zero-length normals/tangents at 2594 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.035' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.035' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.035' has zero-length normals/tangents at 1841 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.037' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.037' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.037' has zero-length normals/tangents at 24 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.043' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.043' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.043' has zero-length normals/tangents at 1664 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.012' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.012' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.012' has zero-length normals/tangents at 1985 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.006' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.006' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.006' has zero-length normals/tangents at 3076 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.038' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.038' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.038' has zero-length normals/tangents at 13797 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.046' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.046' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.046' has zero-length normals/tangents at 1672 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.044' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.044' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.044' has zero-length normals/tangents at 4322 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.058' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.058' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.058' has zero-length normals/tangents at 110 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.045' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.045' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.045' has zero-length normals/tangents at 1393 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.059' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.059' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.059' has zero-length normals/tangents at 3336 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.055' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.055' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.055' has zero-length normals/tangents at 786 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.020' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.020' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.020' has zero-length normals/tangents at 16670 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.074' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.074' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.074' has zero-length normals/tangents at 24 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.019' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.019' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.019' has zero-length normals/tangents at 120 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.017' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.017' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.017' has zero-length normals/tangents at 24 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.043' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.043' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.043' has zero-length normals/tangents at 24 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.042' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.042' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.042' has zero-length normals/tangents at 24 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.050-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.050-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.050-0' has zero-length normals/tangents at 20 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.050-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.050-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.050-1' has zero-length normals/tangents at 8 vertices. Please fix the asset.
+(Warning) The mesh 'Circle.003' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Circle.003' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Circle.003' has zero-length normals/tangents at 1312 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.006' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.006' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.006' has zero-length normals/tangents at 16 vertices. Please fix the asset.
+(Warning) The mesh 'CUaplliances_curve.006' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'CUaplliances_curve.006' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'CUaplliances_curve.006' has zero-length normals/tangents at 995 vertices. Please fix the asset.
+(Warning) The mesh 'Cylinder.046' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cylinder.046' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cylinder.046' has zero-length normals/tangents at 96 vertices. Please fix the asset.
+(Warning) The mesh 'CULWPOLYLINE.000' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'CULWPOLYLINE.000' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'CULWPOLYLINE.000' has zero-length normals/tangents at 1488 vertices. Please fix the asset.
+(Warning) The mesh 'CULWPOLYLINE.006' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'CULWPOLYLINE.006' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'CULWPOLYLINE.006' has zero-length normals/tangents at 1176 vertices. Please fix the asset.
+(Warning) The mesh 'CULWPOLYLINE.002' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'CULWPOLYLINE.002' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'CULWPOLYLINE.002' has zero-length normals/tangents at 1488 vertices. Please fix the asset.
+(Warning) The mesh 'CULWPOLYLINE.001' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'CULWPOLYLINE.001' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'CULWPOLYLINE.001' has zero-length normals/tangents at 4668 vertices. Please fix the asset.
+(Warning) The mesh 'CULWPOLYLINE.003' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'CULWPOLYLINE.003' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'CULWPOLYLINE.003' has zero-length normals/tangents at 1344 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.064' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.064' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.064' has zero-length normals/tangents at 125 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.034' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.034' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.034' has zero-length normals/tangents at 704 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.035' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.035' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.035' has zero-length normals/tangents at 48 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.036' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.036' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.036' has zero-length normals/tangents at 20784 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.015' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.015' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.015' has zero-length normals/tangents at 2786 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.038' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.038' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.038' has zero-length normals/tangents at 992 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.039' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.039' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.039' has zero-length normals/tangents at 44 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.066' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.066' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.066' has zero-length normals/tangents at 125 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.067' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.067' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.067' has zero-length normals/tangents at 125 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.068' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Plane.068' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Plane.068' has zero-length normals/tangents at 104 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.038' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.038' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.038' has zero-length normals/tangents at 482 vertices. Please fix the asset.
+(Warning) The mesh 'Circle.031' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Circle.031' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Circle.031' has zero-length normals/tangents at 13058 vertices. Please fix the asset.
+(Warning) The mesh 'Circle.013' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Circle.013' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Circle.013' has zero-length normals/tangents at 2004 vertices. Please fix the asset.
+(Warning) The mesh 'Circle.034-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Circle.034-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Circle.034-0' has zero-length normals/tangents at 2018 vertices. Please fix the asset.
+(Warning) The mesh 'Circle.034-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Circle.034-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Circle.034-1' has zero-length normals/tangents at 20759 vertices. Please fix the asset.
+(Warning) The mesh 'Circle.033-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Circle.033-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Circle.033-0' has zero-length normals/tangents at 2011 vertices. Please fix the asset.
+(Warning) The mesh 'Circle.033-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Circle.033-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Circle.033-1' has zero-length normals/tangents at 20760 vertices. Please fix the asset.
+(Warning) The mesh 'Circle.020' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Circle.020' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Circle.020' has zero-length normals/tangents at 2160 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.041-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.041-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.041-0' has zero-length normals/tangents at 2242 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.041-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.041-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.041-1' has zero-length normals/tangents at 450 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.042-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.042-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.042-0' has zero-length normals/tangents at 1410 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.042-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.042-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.042-1' has zero-length normals/tangents at 16522 vertices. Please fix the asset.
+(Warning) The mesh 'Circle.012' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Circle.012' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Circle.012' has zero-length normals/tangents at 265730 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.043-0' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.043-0' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.043-0' has zero-length normals/tangents at 8962 vertices. Please fix the asset.
+(Warning) The mesh 'Sphere.043-1' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Sphere.043-1' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Sphere.043-1' has zero-length normals/tangents at 1794 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.007' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.007' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.007' has zero-length normals/tangents at 356 vertices. Please fix the asset.
+(Warning) The mesh 'Cube.008' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'Cube.008' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'Cube.008' has zero-length normals/tangents at 24 vertices. Please fix the asset.
+(Warning) The mesh 'Plane.062' has inf/nan vertex attributes at 2 vertices. Please fix the asset.
+(Warning) The mesh 'dragon' is missing the element texture coordinates. This is not an error, the element will be filled with zeros which may result in incorrect rendering.
+(Warning) Can't generate tangent space. The mesh 'dragon' doesn't have positions/normals/texCrd/indices.
+(Warning) The mesh 'dragon' has zero-length normals/tangents at 881334 vertices. Please fix the asset.
+(Info) Loading asset file:       2.176747 s
+(Info) Verifying scene:          0.000062 s
+(Info) Creating materials:       1.856212 s
+(Info) Creating scene graph:     0.000283 s
+(Info) Creating meshes:          2.530235 s
+(Info) Creating animations:      0.000064 s
+(Info) Creating cameras:         0.000013 s
+(Info) Creating lights:          0.000012 s
+(Info) Pre-transformed 232 static meshes to world space.
+(Info) Flipped triangle winding for 7 out of 288 meshes.
+(Info) Optimized scene graph by removing 5 internal static nodes.
+(Info) Optimized scene graph by merging 1 identical static nodes.
+(Info) Found 232 static non-instanced meshes, arranged in 1 mesh group.
+(Info) Found 0 static (non shadow throwable) non-instanced meshes, arranged in 1 mesh group.
+(Info) Found 0 displaced non-instanced meshes, arranged in 1 mesh group.
+(Info) Found 0 dynamic non-instanced meshes, arranged in 0 mesh groups.
+(Info) Found 56 instanced meshes, arranged in 53 mesh groups.
+(Info) Analyzing 38 material textures.
+(Info) Removing duplicate material 'Clay-Shader-white' (duplicate of 'Kugel2').
+(Info) Removing duplicate material 'Skirting-Board' (duplicate of 'Kugel2').
+(Info) Removing duplicate material 'Blind-ends' (duplicate of 'cactus thorns').
+(Info) Removing duplicate material 'Blind-wood-strip' (duplicate of 'cactus thorns').
+(Info) Removing duplicate material 'Blind-material' (duplicate of 'cactus thorns').
+(Info) Removing duplicate material 'Cable' (duplicate of 'Window-frame-etc').
+(Info) Removing duplicate material 'Breadbin-top' (duplicate of 'Kugel2').
+(Info) Removing duplicate material 'Breadbin-front' (duplicate of 'Breadbin-sides').
+(Info) Removing duplicate material 'Tea-Towel-loop' (duplicate of 'Kugel2').
+(Info) Removing duplicate material 'Ceiling' (duplicate of 'Walls').
+(Info) Removing duplicate material 'Grout' (duplicate of 'Kugel2').
+(Info) Removing duplicate material 'Lamp-cable.001' (duplicate of 'cactus thorns').
+(Info) Removing duplicate material 'Cupboard-units.001' (duplicate of 'Cupboard-units').
+(Info) Removing duplicate material 'Cupboard-units.003' (duplicate of 'Cupboard-units').
+(Info) Removing duplicate material 'Tiles.001' (duplicate of 'Tiles').
+(Info) Removing duplicate material 'Cupboard-units.004' (duplicate of 'Cupboard-units').
+(Info) Removing duplicate material 'Cupboard-units.005' (duplicate of 'Cupboard-units').
+(Info) Removing duplicate material 'Cupboard-units.006' (duplicate of 'Cupboard-units').
+(Info) Removing duplicate material 'Skirting-Board.001' (duplicate of 'Kugel2').
+(Info) Removing duplicate material 'Walls.001' (duplicate of 'Walls').
+(Info) Removing duplicate material 'Ceiling.001' (duplicate of 'Walls').
+(Info) Removing duplicate material 'Pillar.002' (duplicate of 'Pillar').
+(Info) HitInfo: Total size is 128 bits (type: 3 bits, instanceID: 9 bits, primitiveIndex: 20 bits)
+(Info) Post processing geometry: 0.142978 s
+(Info) Optimizing materials:     1.595544 s
+(Info) Creating resources:       0.435880 s
+(Info) Loading scene (total):    9.013638 s
+(Warning) Duplicate program entry points 'intersection' of type 'intersection'.
+(Info) Initiating BLAS build for 54 mesh groups
+(Info) BLAS build split into 1 groups
+(Info) BLAS build result buffer size: 299.70 MB
+(Info) BLAS build scratch buffer size: 198.41 MB
+(Info) BLAS group 0 final size: 119.50 MB
+(Warning) Unsupported shader-model '6_6' requested. Supported shader-models are 6_0, 6_1, 6_2.6_3, 6_4, 6_5, 
+This is not an error, but if something goes wrong try using one of the supported models.
+(Info) LightCollection::build preparation: 0.003869 s
+(Info) LightCollection::build integrate emissive: 0.317634 s
+(Info) LightCollection::build finalize: 0.059768 s

@@ -30,6 +30,11 @@
 #include "RenderGraph/RenderPass.h"
 #include "Utils/Timing/Clock.h"
 
+namespace Falcor
+{
+class RenderGraph;
+}
+
 using namespace Falcor;
 
 struct PathPoint

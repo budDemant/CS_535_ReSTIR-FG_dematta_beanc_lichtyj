@@ -36,12 +36,18 @@
 #include <GLFW/glfw3.h>
 #include <GLFW/glfw3native.h>
 #elif FALCOR_LINUX
+#if FALCOR_USE_WAYLAND
+#define GLFW_EXPOSE_NATIVE_WAYLAND
+#else
 #define GLFW_EXPOSE_NATIVE_X11
+#endif
 #include <GLFW/glfw3.h>
 #include <GLFW/glfw3native.h>
+#if !FALCOR_USE_WAYLAND
 // Undefine various X11 macros.
 #undef None
 #undef Bool
 #undef Status
 #undef Always
+#endif
 #endif

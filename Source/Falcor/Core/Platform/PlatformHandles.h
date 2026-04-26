@@ -37,8 +37,16 @@ using WindowHandle = void*;        // HWND
 using SharedLibraryHandle = void*;
 struct WindowHandle
 {
-    void* pDisplay;
-    unsigned long window;
+    enum class Backend
+    {
+        X11,
+        Wayland,
+    };
+
+    Backend backend = Backend::X11;
+    void* pDisplay = nullptr;
+    unsigned long window = 0;
+    void* pSurface = nullptr;
 };
 #else
 #error "Platform not specified!"

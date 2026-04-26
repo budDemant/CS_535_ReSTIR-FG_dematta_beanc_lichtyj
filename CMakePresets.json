@@ -135,6 +135,16 @@
             ]
         },
         {
+            "name": "linux-clang-wayland",
+            "displayName": "Linux/Clang Wayland",
+            "inherits": [
+                "linux-clang-base"
+            ],
+            "cacheVariables": {
+                "FALCOR_USE_WAYLAND": "ON"
+            }
+        },
+        {
             "name": "linux-clang-ci",
             "displayName": "Linux/Clang (CI)",
             "inherits": [
@@ -158,6 +168,16 @@
             "inherits": [
                 "linux-gcc-base"
             ]
+        },
+        {
+            "name": "linux-gcc-wayland",
+            "displayName": "Linux/GCC Wayland",
+            "inherits": [
+                "linux-gcc-base"
+            ],
+            "cacheVariables": {
+                "FALCOR_USE_WAYLAND": "ON"
+            }
         },
         {
             "name": "linux-gcc-ci",
@@ -206,6 +226,18 @@
             "configuration": "Debug"
         },
         {
+            "name": "linux-clang-wayland-release",
+            "displayName": "Release",
+            "configurePreset": "linux-clang-wayland",
+            "configuration": "Release"
+        },
+        {
+            "name": "linux-clang-wayland-debug",
+            "displayName": "Debug",
+            "configurePreset": "linux-clang-wayland",
+            "configuration": "Debug"
+        },
+        {
             "name": "linux-clang-ci-release",
             "displayName": "Release",
             "configurePreset": "linux-clang-ci",
@@ -227,6 +259,18 @@
             "name": "linux-gcc-debug",
             "displayName": "Debug",
             "configurePreset": "linux-gcc",
+            "configuration": "Debug"
+        },
+        {
+            "name": "linux-gcc-wayland-release",
+            "displayName": "Release",
+            "configurePreset": "linux-gcc-wayland",
+            "configuration": "Release"
+        },
+        {
+            "name": "linux-gcc-wayland-debug",
+            "displayName": "Debug",
+            "configurePreset": "linux-gcc-wayland",
             "configuration": "Debug"
         },
         {

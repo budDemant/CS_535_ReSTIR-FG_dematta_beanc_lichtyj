@@ -1485,15 +1485,23 @@ void ReSTIR_FG::generatePhotonsPass(RenderContext* pRenderContext, const RenderD
 
 void ReSTIR_FG::handlePhotonCounter(RenderContext* pRenderContext)
 {
-     // Copy the photonCounter to a CPU Buffer
+     const uint writeIndex = mFrameCount % kPhotonCounterCount;
+     const uint readIndex = (mFrameCount + 1) % kPhotonCounterCount;
+
      pRenderContext->copyBufferRegion(
-         mpPhotonCounterCPU[mFrameCount % kPhotonCounterCount].get(), 0, mpPhotonCounter[mFrameCount % kPhotonCounterCount].get(), 0,
-         sizeof(uint32_t) * 2
+         mpPhotonCounterCPU[writeIndex].get(), 0, mpPhotonCounter[writeIndex].get(), 0, sizeof(uint32_t) * 2
      );
 
-     void* data = mpPhotonCounterCPU[mFrameCount % kPhotonCounterCount]->map(Buffer::MapType::Read);
-     std::memcpy(&mCurrentPhotonCount, data, sizeof(uint) * 2);
-     mpPhotonCounterCPU[mFrameCount % kPhotonCounterCount]->unmap();
+     if (mPhotonCounterReadbackFrames >= kPhotonCounterCount)
+     {
+        void* data = mpPhotonCounterCPU[readIndex]->map(Buffer::MapType::Read);
+        std::memcpy(&mCurrentPhotonCount, data, sizeof(uint) * 2);
+        mpPhotonCounterCPU[readIndex]->unmap();
+     }
+     else
+     {
+        mPhotonCounterReadbackFrames++;
+     }
 
      // Change Photon dispatch count dynamically.
      if (mUseDynamicPhotonDispatchCount)
@@ -2062,9 +2070,14 @@ void ReSTIR_FG::RayTraceProgramHelper::initRTCollectionProgram(ref<Device> devic
     auto& sbt = pBindingTable;
     sbt->setRayGen(desc.addRayGen("rayGen", globalTypeConformances));   //Type conformances for material model
     sbt->setMiss(0, desc.addMiss("miss"));
-    sbt->setHitGroup(0, 0, desc.addHitGroup("", "anyHit", "intersection", globalTypeConformances));
+    // Each hit group needs a unique entry-point name suffix so Slang emits distinct
+    // intersection entry points; otherwise the two "intersection" exports collide and
+    // the second hit group's intersection shader is dropped, leaving the Vulkan
+    // procedural hit group with intersectionShader == VK_SHADER_UNUSED_KHR
+    // (VUID-VkRayTracingShaderGroupCreateInfoKHR-type-03476).
+    sbt->setHitGroup(0, 0, desc.addHitGroup("", "anyHit", "intersection", globalTypeConformances, "RayType0"));
     sbt->setMiss(1, desc.addMiss("missRes"));
-    sbt->setHitGroup(1, 0, desc.addHitGroup("", "anyHitReservoir", "intersection", globalTypeConformances));
+    sbt->setHitGroup(1, 0, desc.addHitGroup("", "anyHitReservoir", "intersection", globalTypeConformances, "RayType1"));
 
     DefineList defines;
     defines.add(scene->getSceneDefines());

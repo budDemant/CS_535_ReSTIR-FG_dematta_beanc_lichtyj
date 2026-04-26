@@ -905,6 +905,7 @@ target_compile_definitions(Falcor
         FALCOR_HAS_NVAPI=$<BOOL:${FALCOR_HAS_NVAPI}>
         FALCOR_HAS_CUDA=$<BOOL:${FALCOR_HAS_CUDA}>
         FALCOR_HAS_D3D12_AGILITY_SDK=$<BOOL:${FALCOR_HAS_D3D12_AGILITY_SDK}>
+        FALCOR_USE_WAYLAND=$<BOOL:${FALCOR_USE_WAYLAND}>
         # TODO: RTXDI is always available, we might want to remove the feature flag.
         FALCOR_HAS_RTXDI=1
     PRIVATE

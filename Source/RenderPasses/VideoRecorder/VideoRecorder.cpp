@@ -640,17 +640,43 @@ void VideoRecorder::stopRender()
             outputFilename = mOutputPrefix + outputName + ".mp4";
 
         deleteFile(outputFilename); // delete old file (otherwise ffmpeg will not write anything)
-        sprintf_s(buffer, "ffmpeg -r %d -i %s%%04d.bmp -c:v libx264 -preset medium -crf 12 -vf \"fps=%d,format=yuv420p\" \"%s\" 2>&1", mFps, filenameBase.c_str(), mFps, outputFilename.c_str());
+#ifdef _WIN32
+        sprintf_s(
+            buffer,
+            sizeof(buffer),
+            "ffmpeg -r %d -i %s%%04d.bmp -c:v libx264 -preset medium -crf 12 -vf \"fps=%d,format=yuv420p\" \"%s\" 2>&1",
+            mFps,
+            filenameBase.c_str(),
+            mFps,
+            outputFilename.c_str());
+#else
+        snprintf(
+            buffer,
+            sizeof(buffer),
+            "ffmpeg -r %d -i %s%%04d.bmp -c:v libx264 -preset medium -crf 12 -vf \"fps=%d,format=yuv420p\" \"%s\" 2>&1",
+            mFps,
+            filenameBase.c_str(),
+            mFps,
+            outputFilename.c_str());
+#endif
 
         // last frame, convert to video
+#ifdef _WIN32
         FILE* ffmpeg = _popen(buffer, "w");
+#else
+        FILE* ffmpeg = popen(buffer, "w");
+#endif
         if (!ffmpeg)
         {
             logError("Cannot use popen to execute ffmpeg!. Put ffmpeg in \"build/[buildname]/Source/Mogwai\"");
             continue;
         }
 
+#ifdef _WIN32
         auto err = _pclose(ffmpeg);
+#else
+        auto err = pclose(ffmpeg);
+#endif
         deleteFolder(outputName); // delete the temporary files
         if (err)
         {

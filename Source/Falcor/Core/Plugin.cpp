@@ -127,7 +127,17 @@ void PluginManager::loadAllPlugins()
     CpuTimer timer;
     timer.update();
 
-    std::ifstream ifs(getRuntimeDirectory() / "plugins" / "plugins.json");
+    // plugins.json lists which plugins to load. It's deployed next to the running
+    // executable. If it's missing, this is a deployment / packaging error (not a
+    // scenario we silently tolerate); fail loud so the cause is obvious.
+    const auto pluginsJson = getRuntimeDirectory() / "plugins" / "plugins.json";
+    if (!std::filesystem::exists(pluginsJson))
+        throw RuntimeError("plugins.json not found at '{}'.", pluginsJson.string());
+
+    std::ifstream ifs(pluginsJson);
+    if (!ifs.is_open())
+        throw RuntimeError("Failed to open '{}'.", pluginsJson.string());
+
     auto json = nlohmann::json::parse(ifs);
     size_t loadedCount = 0;
     for (const auto& name : json)
