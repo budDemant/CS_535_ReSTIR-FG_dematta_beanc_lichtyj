@@ -1449,8 +1449,6 @@ void ReSTIR_FG::generatePhotonsPass(RenderContext* pRenderContext, const RenderD
         FALCOR_ASSERT(mGeneratePhotonPass.pProgram);
         if (mpEmissiveLightSampler)
             mGeneratePhotonPass.pProgram->addDefines(mpEmissiveLightSampler->getDefines());
-        if (mpEnvMapSampler)
-            mGeneratePhotonPass.pProgram->addDefines(mpEnvMapSampler->getDefines());
 
         mGeneratePhotonPass.initProgramVars(mpDevice, mpScene, mpSampleGenerator);
     };
@@ -1487,6 +1485,8 @@ void ReSTIR_FG::generatePhotonsPass(RenderContext* pRenderContext, const RenderD
 
      if (mpEmissiveLightSampler)
         mpEmissiveLightSampler->setShaderData(var["Light"]["gEmissiveSampler"]);
+      if (mpEnvMapSampler)
+          mpEnvMapSampler->setShaderData(var["EnvLight"]["gEnvMapSampler"]);
 
      // Set the photon buffers
      for (uint32_t i = 0; i < 2; i++){

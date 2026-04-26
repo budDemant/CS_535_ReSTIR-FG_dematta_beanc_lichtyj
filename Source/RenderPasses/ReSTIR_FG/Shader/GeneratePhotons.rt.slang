@@ -13,6 +13,7 @@ import Utils.Color.ColorHelpers;
 import Rendering.Materials.Microfacet;
 import Rendering.Lights.EmissiveLightSampler;
 import Rendering.Lights.EmissiveLightSamplerHelpers;
+import Rendering.Lights.EnvMapSampler;
 import FinalGatherData;
 import Hash;
 
@@ -37,6 +38,13 @@ cbuffer CB
 #if USE_EMISSIVE_LIGHT  //Buffer is only valid if emissive light is enabled
 cbuffer Light{
     EmissiveLightSampler gEmissiveSampler;
+}
+#endif
+
+#if USE_ENV_LIGHT // Buffer is only valid if environment light is enabled
+cbuffer EnvLight
+{
+    EnvMapSampler gEnvMapSampler;
 }
 #endif
 
@@ -66,6 +74,7 @@ static const float kTraceRoughnessMin = MAT_ROUGHNESS_CUTOFF_MIN;
 static const float kTraceRoughnessMax = MAT_ROUGHNESS_CUTOFF_MAX;
 static const bool kRequireDiffuseParts = MAT_REQUIRE_DIFFUSE_PART;
 static const float kTraceDiffuseCutoff = MAT_DIFFUSEPART_CUTOFF;
+static const bool kUseEnvPhotons = USE_ENV_PHOTONS;
 
 
 /** Payload for scatter ray (80B).
@@ -228,6 +237,29 @@ bool createLightSampleAnalytic(inout SampleGenerator sg, out PhotonLightSample p
     return true;
 }
 
+#if USE_ENV_LIGHT
+bool createLightSampleEnv(inout SampleGenerator sg, out PhotonLightSample pls, out float3 sampledDir)
+{
+    pls = {};
+    sampledDir = float3(0);
+
+    EnvMapSample envSample;
+    if (!gEnvMapSampler.sample(sampleNext2D(sg), envSample))
+        return false;
+
+    if (envSample.pdf <= 0.f)
+        return false;
+
+    sampledDir = -envSample.dir;
+    pls.normal = -sampledDir;
+    pls.flux = envSample.Le / envSample.pdf;
+    pls.posW = gScene.camera.data.posW - sampledDir * (0.99f * gScene.camera.data.farZ);
+    pls.posW = computeRayOrigin(pls.posW, pls.normal);
+
+    return any(pls.flux > 0.f);
+}
+#endif
+
 //True if a photon should be stored, false otherwise
 bool cullingTest(float3 origin)
 {
@@ -323,6 +355,17 @@ void rayGen()
     RayDesc ray;
     PhotonLightSample pls;
 
+#if USE_ENV_LIGHT
+    if (kUseEnvPhotons && !(gFlags & (uint)GenerationFlags::AnalyticLight))
+    {
+        float3 sampleDir;
+        if (!createLightSampleEnv(lightSg, pls, sampleDir))
+            return;
+
+        ray.Direction = sampleDir;
+    }
+    else
+#endif
 #if USE_EMISSIVE_LIGHT
     if (gFlags & (uint) GenerationFlags::AnalyticLight)
 #endif
