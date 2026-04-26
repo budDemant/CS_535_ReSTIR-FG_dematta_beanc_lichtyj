@@ -79,8 +79,8 @@ sceneBuilder.addMeshInstance(floorNodeID, floorMeshID)
 
 # Add camera
 camera = Camera('Camera')
-camera.position = float3(0, 0.3, 10)
-camera.target = float3(0, 0.3, 0)
+camera.position = float3(0, 4.11, 7.5)
+camera.target = float3(0, 3.57, 6.6)
 camera.up = float3(0, 1, 0)
 camera.focalLength = 35
 sceneBuilder.addCamera(camera)
@@ -95,7 +95,7 @@ lightbarLightAnimation.addKeyframe(
     0.0,
     Transform(
         scaling=float3(7.5, 0.1, 1.0),
-        translation=float3(0, 1.4, -2),
+        translation=float3(0, 1.4, -1.8),
         rotationEulerDeg=float3(90, 0, 0),
     ),
 )
