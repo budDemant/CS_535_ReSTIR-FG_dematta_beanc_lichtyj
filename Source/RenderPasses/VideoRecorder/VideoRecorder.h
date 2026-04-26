@@ -31,6 +31,10 @@
 #include "Utils/Timing/Clock.h"
 
 using namespace Falcor;
+namespace Falcor
+{
+class RenderGraph;
+}
 
 struct PathPoint
 {
@@ -109,7 +113,7 @@ private:
 
     State mState = State::Idle;
     size_t mRenderIndex = 0;
-    RenderGraph* mpRenderGraph;
+    Falcor::RenderGraph* mpRenderGraph = nullptr;
     std::string mActiveOutput = "";
     std::set<std::string> mOutputs;
     int mFps = 60;

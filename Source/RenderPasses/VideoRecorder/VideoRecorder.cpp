@@ -67,7 +67,7 @@ void VideoRecorder::execute(RenderContext* pRenderContext, const RenderData& ren
     auto renderDict = renderData.getDictionary();
             
     // set render graph
-    auto pRenderGraph = (RenderGraph*)renderDict[kRenderGraph];
+    auto pRenderGraph = (Falcor::RenderGraph*)renderDict[kRenderGraph];
     if(mpRenderGraph != pRenderGraph)
     {
         // clear old outputs and add the primary output as default target
@@ -640,17 +640,25 @@ void VideoRecorder::stopRender()
             outputFilename = mOutputPrefix + outputName + ".mp4";
 
         deleteFile(outputFilename); // delete old file (otherwise ffmpeg will not write anything)
-        sprintf_s(buffer, "ffmpeg -r %d -i %s%%04d.bmp -c:v libx264 -preset medium -crf 12 -vf \"fps=%d,format=yuv420p\" \"%s\" 2>&1", mFps, filenameBase.c_str(), mFps, outputFilename.c_str());
+        std::snprintf(
+            buffer,
+            sizeof(buffer),
+            "ffmpeg -r %d -i %s%%04d.bmp -c:v libx264 -preset medium -crf 12 -vf \"fps=%d,format=yuv420p\" \"%s\" 2>&1",
+            mFps,
+            filenameBase.c_str(),
+            mFps,
+            outputFilename.c_str()
+        );
 
         // last frame, convert to video
-        FILE* ffmpeg = _popen(buffer, "w");
+        FILE* ffmpeg = popen(buffer, "w");
         if (!ffmpeg)
         {
             logError("Cannot use popen to execute ffmpeg!. Put ffmpeg in \"build/[buildname]/Source/Mogwai\"");
             continue;
         }
 
-        auto err = _pclose(ffmpeg);
+        auto err = pclose(ffmpeg);
         deleteFolder(outputName); // delete the temporary files
         if (err)
         {
