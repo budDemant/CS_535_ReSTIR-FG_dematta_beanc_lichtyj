@@ -36,6 +36,7 @@ This is a fork created for a CS 535 (Computer Graphics) class project at SUNY Po
 Team members: Anthony DeMatteo, Joshua Lichty, and Cameron Bean
 ### Modifications
 - Created a new .pyscene featuring an **Environment Map**, **transparent models**, and a **light bar**
+- Added a UI element for the photon intensity threshold
 - Integrated **environment-map photon sampling** into ReSTIR-FG
 - Implemented a **complete env-photon raygen branch** in the shader that importance-samples directions and places virtual photon sources
 - Created a **reproducible A/B test infrastructure** in the Mogwai script (ReSTIR_FG.py) with a simple toggle (USE_ENV_PHOTONS)
