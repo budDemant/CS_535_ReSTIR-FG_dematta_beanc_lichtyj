@@ -1,7 +1,9 @@
 from pathlib import WindowsPath, PosixPath
 from falcor import *
 
-USE_ENV_PHOTONS = False
+# frame comparison test controls
+USE_ENV_PHOTONS = True
+START_FRAME = 3000
 
 def render_graph_ReSTIR_FG():
     g = RenderGraph('ReSTIR_FG')
@@ -21,5 +23,9 @@ def render_graph_ReSTIR_FG():
     return g
 
 ReSTIR_FG = render_graph_ReSTIR_FG()
-try: m.addGraph(ReSTIR_FG)
-except NameError: None
+m = globals().get('m')
+if m is not None:
+    m.addGraph(ReSTIR_FG)
+    m.clock.time = 0
+    m.clock.framerate = 0
+    m.clock.frame = START_FRAME
