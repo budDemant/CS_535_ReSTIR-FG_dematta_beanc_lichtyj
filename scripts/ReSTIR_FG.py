@@ -1,10 +1,12 @@
 from pathlib import WindowsPath, PosixPath
 from falcor import *
 
+USE_ENV_PHOTONS = False
+
 def render_graph_ReSTIR_FG():
     g = RenderGraph('ReSTIR_FG')
     restir_fg_settings = {
-        'UseEnvPhotons': False,
+        'UseEnvPhotons': USE_ENV_PHOTONS,
     }
     g.create_pass('AccumulatePass', 'AccumulatePass', {'enabled': False, 'outputSize': 'Default', 'autoReset': True, 'precisionMode': 'Single', 'maxFrameCount': 0, 'overflowMode': 'Stop'})
     g.create_pass('ToneMapper', 'ToneMapper', {'outputSize': 'Default', 'useSceneMetadata': True, 'exposureCompensation': 0.0, 'autoExposure': False, 'filmSpeed': 100.0, 'whiteBalance': False, 'whitePoint': 6500.0, 'operator': 'Linear', 'clamp': True, 'whiteMaxLuminance': 1.0, 'whiteScale': 11.199999809265137, 'fNumber': 1.0, 'shutter': 1.0, 'exposureMode': 'AperturePriority'})
