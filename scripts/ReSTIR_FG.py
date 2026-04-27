@@ -8,6 +8,7 @@ START_FRAME = 3000
 def render_graph_ReSTIR_FG():
     g = RenderGraph('ReSTIR_FG')
     restir_fg_settings = {
+        'EnvPhotonIntensityThreshold': 0.01,
         'UseEnvPhotons': USE_ENV_PHOTONS,
     }
     g.create_pass('AccumulatePass', 'AccumulatePass', {'enabled': False, 'outputSize': 'Default', 'autoReset': True, 'precisionMode': 'Single', 'maxFrameCount': 0, 'overflowMode': 'Stop'})
