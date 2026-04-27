@@ -273,6 +273,7 @@ private:
     bool mUseStochasticCollect = true;                     //Stochastic collect using reservoir sampling.
     uint mStochasticCollectNumPhotons = 3;
     bool mUseEnvPhotons = false;                           //Enable environment map photons in photon generation
+    float mEnvPhotonIntensityThreshold = 0.01f;            //Minimum env map sample luminance to spawn a photon
 
     bool mUsePhotonCulling = true;
     bool mUseCausticCulling = false;                                 //Enable Culling for caustics
