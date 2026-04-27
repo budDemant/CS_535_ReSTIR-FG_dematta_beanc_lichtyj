@@ -94,6 +94,7 @@ namespace
     const std::string kPropsNumDispatchedPhotons = "NumDispatchedPhotons";
     const std::string kPropsUseLambertianDiffuseBRDF = "UseLambertianDiffuseBRDF";
     const std::string kPropsUseEnvPhotons = "UseEnvPhotons";
+    const std::string kPropsEnvPhotonIntensityThreshold = "EnvPhotonIntensityThreshold";
 
     //UI Dropdowns
     const Gui::DropdownList kResamplingModeList{
@@ -206,6 +207,8 @@ void ReSTIR_FG::parseProperties(const Properties& props)
             mUseLambertianDiffuse = value;
         else if (key == kPropsUseEnvPhotons)
             mUseEnvPhotons = value;
+        else if (key == kPropsEnvPhotonIntensityThreshold)
+            mEnvPhotonIntensityThreshold = value;
         else
             logWarning("Unknown property '{}' in ReSTIR_FG properties.", key);
 
@@ -235,6 +238,7 @@ Properties ReSTIR_FG::getProperties() const
     props[kPropsNumDispatchedPhotons] = mNumDispatchedPhotons;
     props[kPropsUseLambertianDiffuseBRDF] = mUseLambertianDiffuse;
     props[kPropsUseEnvPhotons] = mUseEnvPhotons;
+    props[kPropsEnvPhotonIntensityThreshold] = mEnvPhotonIntensityThreshold;
 
     return props;
 }
@@ -467,6 +471,11 @@ void ReSTIR_FG::renderUI(Gui::Widgets& widget)
                 group.tooltip("Probability a photon light is stored on diffuse hit. Flux is scaled up appropriately");
                 changed |= groupGen.checkbox("Use Env Photons", mUseEnvPhotons);
                 groupGen.tooltip("Enables environment map photons for the photon generation pass.");
+                if (mUseEnvPhotons)
+                {
+                    changed |= groupGen.var("Env Photon Intensity Threshold", mEnvPhotonIntensityThreshold, 0.f, 1.f, 0.001f);
+                    groupGen.tooltip("Minimum luminance of an env map sample required to spawn a photon. Higher values skip dim regions.");
+                }
 
                 changed |= groupGen.var("Max Bounces", mPhotonMaxBounces, 0u, 32u);
                 changed |= groupGen.var("Max Caustic Bounces", mMaxCausticBounces, 0u, 32u);
@@ -725,6 +734,7 @@ void ReSTIR_FG::setScene(RenderContext* pRenderContext, const ref<Scene>& pScene
     mpResamplingPass.reset();
     mpCausticResamplingPass.reset();
     mpEmissiveLightSampler.reset();
+    mpEnvMapSampler.reset();
     mpGIEmissiveLightSampler.reset();
     mpRTXDI.reset();
     mClearReservoir = true;
@@ -768,6 +778,31 @@ void ReSTIR_FG::setScene(RenderContext* pRenderContext, const ref<Scene>& pScene
 bool ReSTIR_FG::prepareLighting(RenderContext* pRenderContext)
 {
     bool lightingChanged = false;
+
+    // Recreate environment map resources when the scene env map changed.
+    if (is_set(mpScene->getUpdates(), Scene::UpdateFlags::EnvMapChanged))
+    {
+        mpEnvMapSampler = nullptr;
+        mGeneratePhotonPass.pVars.reset();
+        lightingChanged = true;
+    }
+
+    if (mpScene->useEnvLight())
+    {
+        if (!mpEnvMapSampler)
+        {
+            mpEnvMapSampler = std::make_unique<EnvMapSampler>(mpDevice, mpScene->getEnvMap());
+            mGeneratePhotonPass.pVars.reset();
+            lightingChanged = true;
+        }
+    }
+    else if (mpEnvMapSampler)
+    {
+        mpEnvMapSampler = nullptr;
+        mGeneratePhotonPass.pVars.reset();
+        lightingChanged = true;
+    }
+
     // Make sure that the emissive light is up to date
     auto& pLights = mpScene->getLightCollection(pRenderContext);
 
@@ -1415,6 +1450,8 @@ void ReSTIR_FG::generatePhotonsPass(RenderContext* pRenderContext, const RenderD
     mGeneratePhotonPass.pProgram->addDefine("MAT_DIFFUSEPART_CUTOFF", std::to_string(mTraceDiffuseCutoff));
     mGeneratePhotonPass.pProgram->addDefine("USE_REDUCED_PD_FORMAT", mUseReducePhotonData ? "1" : "0");
     mGeneratePhotonPass.pProgram->addDefine("USE_ENV_PHOTONS", mUseEnvPhotons ? "1" : "0");
+    mGeneratePhotonPass.pProgram->addDefine("ENV_PHOTON_INTENSITY_THRESHOLD", std::to_string(mEnvPhotonIntensityThreshold));
+    mGeneratePhotonPass.pProgram->addDefine("USE_ENV_LIGHT", mpEnvMapSampler ? "1" : "0");
     mGeneratePhotonPass.pProgram->addDefines(getMaterialDefines());
     
     if (!mGeneratePhotonPass.pVars)
@@ -1458,6 +1495,8 @@ void ReSTIR_FG::generatePhotonsPass(RenderContext* pRenderContext, const RenderD
 
      if (mpEmissiveLightSampler)
         mpEmissiveLightSampler->setShaderData(var["Light"]["gEmissiveSampler"]);
+      if (mpEnvMapSampler)
+          mpEnvMapSampler->setShaderData(var["EnvLight"]["gEnvMapSampler"]);
 
      // Set the photon buffers
      for (uint32_t i = 0; i < 2; i++){

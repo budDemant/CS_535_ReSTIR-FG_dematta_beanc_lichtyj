@@ -1,10 +1,15 @@
 from pathlib import WindowsPath, PosixPath
 from falcor import *
 
+# frame comparison test controls
+USE_ENV_PHOTONS = True
+START_FRAME = 3000
+
 def render_graph_ReSTIR_FG():
     g = RenderGraph('ReSTIR_FG')
     restir_fg_settings = {
-        'UseEnvPhotons': False,
+        'EnvPhotonIntensityThreshold': 0.01,
+        'UseEnvPhotons': USE_ENV_PHOTONS,
     }
     g.create_pass('AccumulatePass', 'AccumulatePass', {'enabled': False, 'outputSize': 'Default', 'autoReset': True, 'precisionMode': 'Single', 'maxFrameCount': 0, 'overflowMode': 'Stop'})
     g.create_pass('ToneMapper', 'ToneMapper', {'outputSize': 'Default', 'useSceneMetadata': True, 'exposureCompensation': 0.0, 'autoExposure': False, 'filmSpeed': 100.0, 'whiteBalance': False, 'whitePoint': 6500.0, 'operator': 'Linear', 'clamp': True, 'whiteMaxLuminance': 1.0, 'whiteScale': 11.199999809265137, 'fNumber': 1.0, 'shutter': 1.0, 'exposureMode': 'AperturePriority'})
@@ -19,5 +24,9 @@ def render_graph_ReSTIR_FG():
     return g
 
 ReSTIR_FG = render_graph_ReSTIR_FG()
-try: m.addGraph(ReSTIR_FG)
-except NameError: None
+m = globals().get('m')
+if m is not None:
+    m.addGraph(ReSTIR_FG)
+    m.clock.time = 0
+    m.clock.framerate = 0
+    m.clock.frame = START_FRAME

@@ -23,11 +23,59 @@ Teaser:
 
 ## Contents:
 
+* [Fork Information](#fork-information)
 * [ReSTIR FG Lite](#restir-fg-lite)
 * [Demo usage](#demo-usage)
 * [Testing with more Scenes](#testing-with-more-scenes)
 * [Falcor Prerequisites](#falcor-prerequisites)
 * [Building Falcor](#building-falcor)
+
+
+## Fork Information
+This is a fork created for a CS 535 (Computer Graphics) class project at SUNY Polytechnic 
+Team members: Anthony DeMatteo, Joshua Lichty, and Cameron Bean
+### Modifications
+- Created a new .pyscene featuring an **Environment Map**, **transparent models**, and a **light bar**
+- Integrated **environment-map photon sampling** into ReSTIR-FG
+- Implemented a **complete env-photon raygen branch** in the shader that importance-samples directions and places virtual photon sources
+- Created a **reproducible A/B test infrastructure** in the Mogwai script (ReSTIR_FG.py) with a simple toggle (USE_ENV_PHOTONS)
+### Setup (Windows with Visual Studio 2022)
+
+#### Prerequisites
+- Ensure that you meet the [Falcor Prerequisites](#falcor-prerequisites)
+
+#### Setup & Run Mogwai
+
+1. **Clone and set up dependencies**
+   ```powershell
+   git clone https://github.com/budDemant/CS_535_ReSTIR-FG_dematta_beanc_lichtyj
+   cd "path\to\repository"
+   .\setup_vs2022.bat
+   ```
+
+2. **Build Falcor in Visual Studio 2022**
+   - Open `build/windows-vs2022/Falcor.sln` in Visual Studio 2022
+   - In Solution Explorer, right-click **ALL_BUILD** and select **Build**
+   - Wait for the build to complete
+   - Build output will be in `build/windows-vs2022/bin/Debug/`
+
+3. **Run Mogwai with ReSTIR FG**
+   - Open PowerShell
+   - Navigate to the build output directory:
+     ```powershell
+     cd "build/windows-vs2022/bin/Debug"
+     .\setpath.ps1
+     .\Mogwai.exe
+     ```
+
+4. **Load the render script and scene**
+   - In Mogwai, go to **File → Load Script**
+   - Select `scripts/ReSTIR_FG.py`
+   - Go to **File → Load Scene**
+   - Select `ReSTIR_FG_demo.pyscene`
+   - You should see the rendered output
+
+
 
 ## ReSTIR FG Lite
 ReSTIR FG Lite is a stripped-down version of our base variant, designed to highlight the core algorithm in a simpler form. The implementation follows the notation used in the ["A gentle Introduction to ReSTIR" course](https://intro-to-restir.cwyman.org/).

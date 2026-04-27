@@ -32,6 +32,7 @@
 #include "Rendering/Lights/LightBVHSampler.h"
 #include "Rendering/Lights/EmissivePowerSampler.h"
 #include "Rendering/Lights/EmissiveUniformSampler.h"
+#include "Rendering/Lights/EnvMapSampler.h"
 
 #include "Rendering/RTXDI/RTXDI.h"
 
@@ -189,6 +190,7 @@ private:
     RTXDI::Options mRTXDIOptions;                                      //Options for RTXDI
 
     std::unique_ptr<EmissiveLightSampler> mpEmissiveLightSampler;       //Light Sampler
+    std::unique_ptr<EnvMapSampler> mpEnvMapSampler;                     //Environment light sampler
     std::unique_ptr<CustomAccelerationStructure> mpPhotonAS;            //Accel Pointer
 
     //
@@ -273,6 +275,7 @@ private:
     bool mUseStochasticCollect = true;                     //Stochastic collect using reservoir sampling.
     uint mStochasticCollectNumPhotons = 3;
     bool mUseEnvPhotons = false;                           //Enable environment map photons in photon generation
+    float mEnvPhotonIntensityThreshold = 0.01f;            //Minimum env map sample luminance to spawn a photon
 
     bool mUsePhotonCulling = true;
     bool mUseCausticCulling = false;                                 //Enable Culling for caustics
